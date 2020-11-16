@@ -304,9 +304,20 @@ main code start here
         }
         .tourGuidesSliderItemBox{
             margin-bottom: 30px;
+            perspective: 1000px;
+            &:hover{
+                .imageBox{
+                    transform: rotateY(180deg);
+                }
+            }
             .imageBox{
-                position: relative;
                 cursor: pointer;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                transition: transform 0.6s;
+                transform-style: preserve-3d;
                 img{
                     width: 100% !important;
                 }
@@ -580,3 +591,70 @@ main code start here
         }
     }
 }
+
+
+
+
+
+
+.flip-card {
+    background-color: transparent;
+    width: 100%;
+    perspective: 1000px;
+    cursor: pointer;
+    min-height: 338px;
+    margin-bottom: 30px;
+  }
+  .flip-card-front{
+      img{
+          width: 100%;
+      }
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    min-height: 338px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  .flip-card-back {
+    background-color: #666;
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    flex-direction: column;
+    padding: 0px 20px;
+    h4{
+        font-family: arbold;
+        color: #fff;
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    p{
+        font-size: 14px;
+        color: #fff;
+        line-height: 25px;
+    }
+  }
