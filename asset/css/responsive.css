@@ -433,10 +433,14 @@
         min-height: auto;
     }
     .flip-card{
-        min-height: 309px;
+        min-height: inherit;
+        margin-bottom: 0px;
     }
     .flip-card-inner {
         min-height: 309px;
+    }
+    .flip-card-back {
+        padding: 0px 26px;
     }
 }
 
